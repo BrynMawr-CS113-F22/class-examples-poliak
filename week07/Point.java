@@ -82,6 +82,14 @@ class Point {
     public void setY(double newY) {
         y = newY;
     }
+
+    public void setName(String name) {
+        this.name = name
+    }
+
+    public void setColor(String color) {
+      this.color = color;
+    }
   
     public static void main(String[] args) {
       //Point p; // constructor not called

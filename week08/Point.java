@@ -23,7 +23,7 @@ class Point {
   
     public Point(double x, double y) { // implemention of a constructor
       // let's assign the values (note for Adam, use "this")
-      System.out.println("Constructor with x and y");
+      //System.out.println("Constructor with x and y");
       this.x = x;
       this.y = y;
     }
@@ -90,6 +90,29 @@ class Point {
     public void setColor(String color) {
       this.color = color;
     }
+
+    /*
+     * Find the distance between this point and another point called p
+     */
+    public double distance(Point p) {
+        // we have an implict argument being passed in
+        // the impicit arguemnt is the object tht we are currently in
+        // we access that object by using "this"
+       double x2 = p.getX();
+       double y2 = p.getY();
+       //p2.getX();
+       double x1 = this.x;  // p2.getX();
+       double y1 = this.y;
+       return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+
+    public static double distance(Point p1, Point p2) {
+        return p1.distance(p2);
+    }
+
+    public String toString() {
+        return "Point " + name + "'s color is " + color + ", x: " + x + ", and y: " + y;
+    }
   
     public static void main(String[] args) {
       //Point p; // constructor not called
@@ -100,8 +123,14 @@ class Point {
       System.out.printf("The point %s's x and y coordinates are %.2f and %.2f", 
                                  p3.getName(), p3.getX(), p3.getY());
 
-    System.out.printf("The point %s's x and y coordinates are %.2f and %.2f", 
-                                 p.getName(), p.getX(), p.getY());
+        System.out.printf("The point %s's x and y coordinates are %.2f and %.2f", 
+                                    p.getName(), p.getX(), p.getY());
+        System.out.println();
+        System.out.println(p2.distance(p3));
+
+        System.out.println(Point.distance(p2, p3));
     }
+
+
     //System.out.print(p3);
   }

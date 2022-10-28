@@ -6,7 +6,7 @@ class Point {
 
     // instance variables (data)
     // What values do every point have?
-    double x;
+    private double x;
     double y;
     String color; 
     String name;
